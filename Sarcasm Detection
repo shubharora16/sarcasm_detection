@@ -1,0 +1,56 @@
+For Sarcasm detection, we will be needing some data which we will pick from Twitter API .
+
+For Data Extraction, we will find tweets with #sarcasm or #sarcastic tag with it and assume it to be sarcastic data.
+Then we will pick normal tweets without sarcasm tag and assume it to be non sarcastic.
+
+(The only problem here is we have to rely on tweets )
+
+After we get data next step is to preprocess it.
+For removing noise, we will do following :
+1. Remove URL
+2. Remove tweets with @ in beginning (They generally refer to a reply)
+3. Remove Useless Words such as "a an the etc.".
+4. Remove non ASCII characters.
+5. Remove all hashtags.
+6. Remove all tweets with less than 3 words(we assume sarcasm cannot be expressed in less than 3 words).
+We will implement this using python script and python library tweepy.
+
+Now we have our labelled data set, next task is to find out features for classification.
+Features would be :
+1. Sentiment Analysis :- We will break our tweets in some parts and check if its positive , negative or neutral.
+    This is because in sarcastic sentence, positive words follow negative words or vice versa.
+To implement this , we will be using python library called TextBlob. 
+
+2. Topics : Like if we already know about the topics then it would be easy to understand sarcasm in it.
+            Ex. If a rich guy says "I love being rich", it is not sarcastic.
+            But if a poor guy says same sentence , then it is sarcastic.
+To implement this , we will be using the python library gensim which implements topic modelling using latent Dirichlet allocation 
+ (LDA). We first feed all the tweets to the topic modeller which learns the topics. Then each tweet can be decomposed as a sum of 
+ topics, which we use as features.
+
+3. Capitalisation :- We will look for some capital words in our tweets because generally capital words are written to show excitement.
+                     Ex. "SO EXCITED TODAY".
+To implement this, we will be using flags.
+
+
+We will be looking for some extra features in future.
+
+Now we have features , so we will be looking for classification algorithm.
+For classifier we will be looking for
+1. Naive Bayes
+2. Support Vector Machine (SVM)
+To implement this, we will use the python library  Scikit-learn.
+
+Then we will calculate F score to know which classifier predicted better results.
+
+Then Final task would be to create UI and backend for our application.
+To implement this , we can use some web technology.
+
+
+
+
+
+
+
+
+
