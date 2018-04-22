@@ -9,10 +9,10 @@ from tweepy import OAuthHandler
 import csv
 import time
 from twitter import Twitter, OAuth, TwitterHTTPError, TwitterStream
-ACCESS_KEY = '940193737237413888-7P7F949i64HhvPA5uAqpnMNnZIhpvhY'
-ACCESS_SECRET = '8QKpo2sB67UMMPfr3yn0VXu4n1WMMoxvw7meiMJjqzt35'
-CONSUMER_KEY = 'Za02taiQpxuOkpUvyBfPyeQBZ'
-CONSUMER_SECRET = '6UHavBCROhBNFPmkhvbskck8y3kybDjTQkqTnNgwoyBeC3fxBt'
+ACCESS_KEY = ''
+ACCESS_SECRET = ''
+CONSUMER_KEY = ''
+CONSUMER_SECRET = ''
 auth = tweepy.auth.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
